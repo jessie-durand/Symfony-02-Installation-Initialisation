@@ -1,0 +1,166 @@
+body {
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    color: rgb(245, 240, 227);
+    font-family: 'Aovel Sans', sans-serif;
+
+}
+
+.wildtitre {
+    font-family: 'Geometri Outine', sans-serif;
+    font-size: 60px;
+    text-align: center;
+}
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap : 50px;
+    margin-top:3%;
+    list-style-type: none;
+    font-size: 22px;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(245, 240, 227);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+nav a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color:rgb(122, 121, 202);
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+nav a:hover {
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(122, 121, 202);
+
+}
+
+nav a:hover:before {
+    transform: translateX(0);
+}
+
+SELECT {
+    background-color:rgb(13, 25, 39);
+    color:rgb(245, 240, 227);
+    border-color: rgb(13, 25, 39);
+    padding: 0.5%;
+    border-radius: 10%;
+    font-size:18px;
+    font-family: 'Aovel Sans', sans-serif;
+}
+
+.allPrograms {
+    display:flex;
+    gap:10px;
+    justify-content: space-between;
+}
+.program {
+    display:flex;
+    flex-direction: column;
+}
+
+.program h2 {
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ .program a {
+    text-decoration: underline;
+    color:rgb(245, 240, 227);
+    font-size: 18px;
+}
+
+.program a:hover {
+    color: rgb(122, 121, 202);
+}
+
+
+.program img {
+    height: 280px;
+    width: auto;
+    object-fit: cover;
+    border-radius:3%;
+    cursor:pointer;
+    transition: all 1s;
+}
+
+.program img:hover {
+    height : 450px;
+    width: auto;
+}
+
+.category a {
+    text-decoration: none;
+    color: rgb(245, 240, 227);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+    overflow: hidden;
+    font-size: 30px;
+}
+
+.category a:hover {
+    text-decoration: underline;
+    font-size: 35px;
+    color: rgb(122, 121, 202);
+}
+
+.boutonRetour {
+    margin-top:2%;
+    display:flex;
+    justify-content: center;
+}
+
+.boutonRetour a {
+    display:flex;
+    justify-content : center;
+    text-decoration: none;
+    color: rgb(122, 121, 202);
+    font-size: 18px;
+    border: 3px solid rgb(122, 121, 202);
+    padding: 10px 15px;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+    width:30%;
+}
+
+.boutonRetour a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(122, 121, 202);
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.boutonRetour a:hover:before {
+    transform: translateX(0);
+  }
+
+.boutonRetour a:hover {
+    color: #351435;
+  }

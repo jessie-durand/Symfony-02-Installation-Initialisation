@@ -7,6 +7,10 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+            <link rel="stylesheet" href="/assets/css/style.css">
+            <link rel="icon" type="favicon/x-icon" href="/public/assets/images/icon.png">
+            <link href="http://fonts.cdnfonts.com/css/geometri-outine" rel="stylesheet">
+            <link href="http://fonts.cdnfonts.com/css/aovel-sans-2" rel="stylesheet">
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +18,29 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}<h1>Bienvenue !</h1>{% endblock %}
+    {% block header %}
+    <nav>
+        <div class="wildtitre">Wild series</div>
+        <ul>
+            <SELECT name="catégories" size="1">
+            <option>Catégories</option>
+            {# {% for category in categories %} #}
+            {# <option>{{ category.name }}</option></a> #}
+            {# {% endfor %} #}
+            </SELECT>
+
+            <SELECT name="acteurs" size="1">
+            <option>Acteurs</option>
+            </SELECT>
+
+            <li><a href="">Mes favoris ❤</a></li>
+
+            <li><a href="">Déconnexion</a></li>
+        </ul>
+    </nav>
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
     </body>
 </html>
