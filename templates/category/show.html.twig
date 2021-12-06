@@ -5,13 +5,14 @@
 {% block body %}
     <div class="media">
         <div class="media-body">
-            <p>Catégorie : {{ categoryName }}</p>
 
             {% for program in programs %}
-            <div class="program">
+            <div class="categoryshow">
                 <h1 class="mt-0">{{program.id}}.{{ program.title }}</h1>
+                <img src="{{program.poster}}" alt="{{ program.title }} poster">
                 <p>{{ program.summary }}</p>
-                <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
+                <p>Catégorie : {{ categoryName }}</p>
+                <a href="{{ path("program_show", { id: program.id }) }}">Voir toutes les saisons</a>
             {% else %}
             Aucune série trouvée.
             {% endfor %}
