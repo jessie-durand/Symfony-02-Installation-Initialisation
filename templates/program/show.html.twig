@@ -23,9 +23,9 @@
                     <p> La liste des saisons :</p>
                     {% for season in program.seasons %}
                     <li>
-                    {# <a href="{{ path("program_show_season", { program_id: program.id, season_id:season.number}) }}"> #}
+                    <a href="{{ path("program_show_season", { program_id: program.id, season_id:season.number}) }}">
                     {{season.description}}
-                    {# </a> #}
+                    </a>
                     </li>
                     {% endfor %}
                 </div>

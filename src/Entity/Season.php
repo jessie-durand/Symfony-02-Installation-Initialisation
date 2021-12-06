@@ -54,14 +54,14 @@ class Season
         return $this->id;
     }
 
-    public function getProgramId(): ?Program
+    public function getProgram(): ?Program
     {
-        return $this->program_id;
+        return $this->program;
     }
 
-    public function setProgramId(?Program $program_id): self
+    public function setProgram(?Program $program): self
     {
-        $this->program_id = $program_id;
+        $this->program = $program;
 
         return $this;
     }
