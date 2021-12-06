@@ -100,7 +100,7 @@ h1 {
 
 
 .program img {
-    height: 280px;
+    height: 200px;
     width: auto;
     object-fit: cover;
     border-radius:3%;
@@ -159,7 +159,7 @@ margin-left:41%;
    cursor:pointer;
 }
 .program img:hover {
-    height : 450px;
+    height : 350px;
     width: auto;
 }
 
