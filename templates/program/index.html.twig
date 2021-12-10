@@ -9,7 +9,7 @@
          <div class="program">
             <a href="{{ path("program_show", { id: program.id }) }}"><img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster"></a>
             <h2>{{ loop.index }} . {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
-            <p class="card-text">{{ program.summary| striptags | slice(0, 200) }} [...] </p>
+            <p class="card-text">{{ program.summary| striptags | slice(0, 180) }} [...] </p>
             {# Lien vers la fiche de la série : #}
             <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
         </div>

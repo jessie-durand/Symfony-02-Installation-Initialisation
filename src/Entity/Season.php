@@ -112,12 +112,12 @@ class Season
     {
         // unset the owning side of the relation if necessary
         if ($episode === null && $this->episode !== null) {
-            $this->episode->setSeasonId(null);
+            $this->episode->setSeason(null);
         }
 
         // set the owning side of the relation if necessary
-        if ($episode !== null && $episode->getSeasonId() !== $this) {
-            $episode->setSeasonId($this);
+        if ($episode !== null && $episode->getSeason() !== $this) {
+            $episode->setSeason($this);
         }
 
         $this->episode = $episode;
