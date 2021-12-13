@@ -9,7 +9,7 @@
         Les épisodes de la saison :
          {% for episode in season.episodes %}
              <li>
-             <a href="{{ path("program_show_episode", { program_id: season.program.id, season_id:season.id, episode_id:episode.id}) }}">
+             <a href="{{ path("program_show_episode", { slug: season.program.slug, season_id:season.id, episode:episode.slug}) }}">
              {{episode.title}}
              </a>
              </li>
