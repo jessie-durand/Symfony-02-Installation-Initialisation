@@ -7,8 +7,10 @@ use App\Entity\Episode;
 use App\Entity\Program;
 use App\Service\Slugify;
 use App\Form\ProgramType;
+use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,7 +46,7 @@ class ProgramController extends AbstractController
      *
      * @Route("/new", name="new")
      */
-    public function new(Request $request, Slugify $slugify): Response
+    public function new(Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {
         // Create a new Program Object
         $program = new Program();
@@ -63,6 +65,13 @@ class ProgramController extends AbstractController
             $entityManager->persist($program);
             // Flush the persisted object
             $entityManager->flush();
+            $email = (new Email())
+                ->from($this->getParameter('mailer_from'))
+                ->to('your_email@example.com')
+                ->subject('Une nouvelle série vient d\'être publiée !')
+                ->html($this->renderView('Program/newProgramEmail.html.twig', ['program' => $program]));
+
+            $mailer->send($email);
             // Finally redirect to program list
             return $this->redirectToRoute('program_index');
         }
