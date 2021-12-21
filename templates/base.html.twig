@@ -32,10 +32,14 @@
             <SELECT name="acteurs" size="1">
             <option>Acteurs</option>
             </SELECT>
-
             <li><a href="">Mes favoris ❤</a></li>
 
-            <li><a href="">Déconnexion</a></li>
+            {% if app.user %}
+            {{ app.user.email }}
+            <li><a href="{{ path('app_logout') }}"> Se déconnecter</a></li>
+            {% else %}
+            <li><a href="{{ path('login') }}"> Se connecter</a></li>
+            {% endif %}
         </ul>
     </nav>
     {% endblock %}

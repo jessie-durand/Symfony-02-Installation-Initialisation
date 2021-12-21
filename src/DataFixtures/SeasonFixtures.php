@@ -15,7 +15,7 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
         $season->setNumber(4);
         $season->setYear('1997');
         $season->setDescription('Saison 4');
-        $season->setProgram($this->getReference('program_0'));
+        $season->setProgram($this->getReference('program_1'));
         $this->addReference('season', $season);
         //ici les acteurs sont insérés via une boucle pour être DRY mais ce n'est pas obligatoire
         $manager->persist($season);
