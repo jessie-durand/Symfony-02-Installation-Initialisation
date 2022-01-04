@@ -139,7 +139,7 @@ class ProgramController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'program_edit', methods: ['GET', 'POST'])]
+    #[Route('/{slug}/edit', name: 'program_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Program $program, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ProgramType::class, $program);
