@@ -24,9 +24,9 @@
         <ul>
             <SELECT name="catégories" size="1">
             <option>Catégories</option>
-            {# {% for category in categories %} #}
-            {# <option>{{ category.name }}</option></a> #}
-            {# {% endfor %} #}
+            {# {% for category in categories %}
+            <option>{{ category.name }}</option></a>
+            {% endfor %} #}
             </SELECT>
 
             <SELECT name="acteurs" size="1">
@@ -45,6 +45,18 @@
     {% endblock %}
 
     {% block body %}
+    {% for messages in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+     {% for messages in app.flashes('delete') %}
+        <div class="alert alert-delete" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     {% endblock %}
     </body>
 </html>

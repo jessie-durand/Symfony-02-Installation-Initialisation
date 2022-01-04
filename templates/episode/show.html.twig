@@ -35,10 +35,12 @@
     {% if app.user %}
         <h2> Ajouter un commentaire</h2>
         {{ include('episode/_form.html.twig') }}
+        <h3>Les commentaires</h3>
+        {% for comment in episode.comments %}
+        <li>{{comment.comment}}</li>
+        {% endfor %}
     {% endif %}
 
-    {% for comment in episode.comments %}
-        <li>{{comment.comment}}</li>
-    {% endfor %}
+
 
 {% endblock %}

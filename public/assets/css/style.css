@@ -278,3 +278,15 @@ border-radius: 2%;
 .boutonRetour a:hover {
     color: #351435;
   }
+
+/* Mise en forme des flash messages*/
+
+.alert-success {
+    color:green;
+    font-size:40px;
+}
+
+.alert-delete {
+    color:red;
+    font-size:40px;
+}

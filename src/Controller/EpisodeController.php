@@ -42,6 +42,9 @@ class EpisodeController extends AbstractController
             $episode->setSlug($slug);
             $entityManager->persist($episode);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Un nouvel épisode a été ajouté');
+
             $email = (new Email())
                 ->from($this->getParameter('mailer_from'))
                 ->to('your_email@example.com')
@@ -105,6 +108,8 @@ class EpisodeController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $episode->getId(), $request->request->get('_token'))) {
             $entityManager->remove($episode);
             $entityManager->flush();
+
+            $this->addFlash('delete', 'L\'épisode vient d\'être supprimé');
         }
 
         return $this->redirectToRoute('episode_index', [], Response::HTTP_SEE_OTHER);

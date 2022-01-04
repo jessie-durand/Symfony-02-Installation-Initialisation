@@ -65,6 +65,10 @@ class ProgramController extends AbstractController
             $entityManager->persist($program);
             // Flush the persisted object
             $entityManager->flush();
+
+            $this->addFlash('success', 'La nouvelle série a été ajoutée');
+
+
             $email = (new Email())
                 ->from($this->getParameter('mailer_from'))
                 ->to('your_email@example.com')
@@ -159,6 +163,8 @@ class ProgramController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $program->getId(), $request->request->get('_token'))) {
             $entityManager->remove($program);
             $entityManager->flush();
+
+            $this->addFlash('delete', 'La série vient d\'être supprimée');
         }
 
         return $this->redirectToRoute('program_index', [], Response::HTTP_SEE_OTHER);
